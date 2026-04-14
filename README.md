@@ -9,6 +9,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ai-craftsman404/Metis-Intelligence/actions/workflows/metis-ci.yml">
+    <img src="https://github.com/ai-craftsman404/Metis-Intelligence/actions/workflows/metis-ci.yml/badge.svg" alt="Metis CI">
+  </a>
+</p>
+
+<p align="center">
   Metis turns domain research into a guided ritual: choose a field, invoke synthesis, and receive a structured intelligence bulletin through a product experience designed to feel memorable from the first screen.
 </p>
 
