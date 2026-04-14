@@ -10,11 +10,20 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+project_id = os.getenv("GOOGLE_CLOUD_PROJECT")
+location = os.getenv("GOOGLE_CLOUD_LOCATION")
+
 # Initialize Vertex AI
-if not os.getenv("OPENROUTER_API_KEY"):
+if (
+    not os.getenv("OPENROUTER_API_KEY")
+    and project_id
+    and location
+    and project_id != "XXXX"
+    and location != "XXXX"
+):
     vertexai.init(
-        project=os.getenv("GOOGLE_CLOUD_PROJECT"),
-        location=os.getenv("GOOGLE_CLOUD_LOCATION")
+        project=project_id,
+        location=location
     )
 
 app = FastAPI(title="Metis Intelligence API")
