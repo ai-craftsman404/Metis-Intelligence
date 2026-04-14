@@ -1,0 +1,14 @@
+steps:
+  # 1. Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/metis-prototype', '.']
+
+  # 2. Push the image to Artifact Registry (GCR)
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/metis-prototype']
+
+# Note: Deployment is handled manually in the deploy.sh script
+# to allow for dynamic identity delegation and IAM roles.
+
+images:
+  - 'gcr.io/$PROJECT_ID/metis-prototype'

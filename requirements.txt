@@ -1,0 +1,6 @@
+google-cloud-aiplatform
+python-dotenv
+halo
+fastapi
+uvicorn
+gunicorn
