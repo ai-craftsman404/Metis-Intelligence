@@ -195,15 +195,15 @@ def run_research(request: ResearchRequest):
     
     if domain_id not in DOMAIN_PERSONAS:
         raise HTTPException(status_code=400, detail="Invalid domain ID")
-    
-    # Initialize the Metis Orchestrator
-    metis = get_metis_orchestrator(domain_id, custom_domain)
-    
+
     topic = DOMAIN_PERSONAS.get(domain_id, DOMAIN_PERSONAS["9"])[0]
     if domain_id == "9":
         if not custom_domain:
             raise HTTPException(status_code=400, detail="Custom domain is required for domain_id '9'")
         topic = custom_domain
+
+    # Initialize the Metis Orchestrator only after request validation passes.
+    metis = get_metis_orchestrator(domain_id, custom_domain)
 
     # Run the orchestration process
     response = metis.ask(f"Discover high-signal trends in {topic} and draft a synthesis report.")
