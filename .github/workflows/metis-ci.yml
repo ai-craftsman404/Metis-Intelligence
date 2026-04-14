@@ -5,11 +5,15 @@ on:
     branches: [main]
   pull_request:
 
+env:
+  # GitHub-hosted runners will default JavaScript actions to Node 24 starting 2026-06-02.
+  # Opt in early to avoid surprise breakage and remove Node 20 deprecation warnings.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       PYTHONPATH: .
     steps:
       - name: Checkout
@@ -31,4 +35,3 @@ jobs:
 
       - name: Run unit tests
         run: python -m unittest discover -s tests -t .
-
