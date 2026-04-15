@@ -15,6 +15,14 @@
 </p>
 
 <p align="center">
+  Metis turns noisy domain research into decision-ready technical intelligence briefs.
+</p>
+
+<p align="center">
+  <strong>Proof links:</strong> <a href="https://github.com/ai-craftsman404/Metis-Intelligence/releases/tag/v0.1.0">Release v0.1.0</a> · <a href="#experience-snapshot">Demo Screens</a> · <a href="#gcp-native-architecture">Architecture</a>
+</p>
+
+<p align="center">
   Metis turns domain research into a guided ritual: choose a field, invoke synthesis, and receive a structured intelligence bulletin through a product experience designed to feel memorable from the first screen.
 </p>
 
